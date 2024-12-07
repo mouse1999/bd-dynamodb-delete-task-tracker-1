@@ -1,4 +1,10 @@
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDeleteExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TaskDAO {
 
@@ -18,6 +24,26 @@ public class TaskDAO {
      */
     public void deleteTask(Task task) {
         //TODO: Implement functionality to delete the task that's passed in
+
+        mapper.delete(task);
+//        DynamoDBDeleteExpression deleteExpression = new DynamoDBDeleteExpression();
+//        Map<String, ExpectedAttributeValue> expected = new HashMap<>();
+//
+//        expected.put("status", new ExpectedAttributeValue(new AttributeValue("inactive")));
+//        deleteExpression.setExpected(expected);
+//        mapper.delete(task, deleteExpression);
+
+
+//        try {
+//            DynamoDBDeleteExpression deleteExpression = new DynamoDBDeleteExpression();
+//            Map<String, ExpectedAttributeValue> expected = new HashMap<>();
+//            expected.put("status", new ExpectedAttributeValue(new AttributeValue("received")));
+//            deleteExpression.setExpected(expected);
+//            mapper.delete(boots, deleteExpression);
+//        } catch (ConditionalCheckFailedException e) {
+//            System.out.println(e);
+//        }
+
     }
 
     /**
